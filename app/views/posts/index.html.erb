@@ -1,1 +1,56 @@
 "こんにちは"
+  
+<form method="get" action="select.html">
+
+<p>
+<select name="example" required>
+<option value="">選択してください</option>
+<option>選択肢のサンプル1</option>
+<option>選択肢のサンプル2</option>
+<option>選択肢のサンプル3</option>
+<option>選択肢のサンプル4</option>
+<option>選択肢のサンプル5</option>
+</select>
+ <strong>必須</strong>
+</p>
+
+
+
+<p>
+<select name="example" required>
+<option value="">選択してください</option>
+<option>選択肢のサンプル1</option>
+<option>選択肢のサンプル2</option>
+<option>選択肢のサンプル3</option>
+<option>選択肢のサンプル4</option>
+<option>選択肢のサンプル5</option>
+</select>
+ <strong>必須</strong>
+</p>
+
+<p><input type="submit" value="送信する"></p>
+
+</form>
+<select id="page_name" name="page[name]"><option value="1">Railsの基礎知識</option>
+<option value="2">Rubyの基礎知識</option>
+</select>
+<h1>記事一覧</h1>
+<%= link_to "投稿する", new_post_path, class:"post" %>
+<table>
+  <thead>
+    <tr>
+      <th>順位</th>
+      <th>カテゴリー</th>
+      <th>記事の本数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each_with_index do |post, i| %>
+      <tr>
+        <td><%= i + 1 %></td>
+        <td><%=post.first %></td>
+        <td><%=post.second %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
